@@ -1,0 +1,33 @@
+.input-container {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--neon-primary);
+  display: flex;
+  gap: var(--spacing-md);
+  background: var(--darker-bg);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+#userInput {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 1px solid var(--neon-primary);
+  border-radius: var(--border-radius);
+  resize: none;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  background: var(--dark-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+#userInput:focus {
+  outline: none;
+  border-color: var(--neon-accent);
+  box-shadow: 0 0 10px var(--neon-primary);
+}
+
+#sendButton {
+  align-self: flex-end;
+  padding: var(--spacing-sm) var(--spacing-lg);
+}

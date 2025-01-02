@@ -1,0 +1,21 @@
+.header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--neon-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--darker-bg);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--neon-primary);
+  text-shadow: 0 0 10px var(--neon-primary);
+}
+
+#clearMemory {
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Chat Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI Chat Assistant</h1>
+      <button id="clearMemory" class="neon-button">Clear Memory</button>
+    </div>
+    
+    <div class="chat-container" id="chatContainer">
+      <!-- Chat messages will be inserted here -->
+    </div>
+
+    <div class="input-container">
+      <textarea 
+        id="userInput" 
+        placeholder="Ask me anything..."
+        rows="3"
+      ></textarea>
+      <button id="sendButton" class="neon-button">Send</button>
+    </div>
+  </div>
+  <script type="module" src="js/popup.js"></script>
+</body>
+</html>
