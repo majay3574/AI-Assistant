@@ -1,11 +1,12 @@
 .neon-button {
-  background-color: transparent;
+  background-color: var(--darker-bg);
   color: var(--neon-primary);
   border: 1px solid var(--neon-primary);
   border-radius: var(--border-radius);
   padding: var(--spacing-md) var(--spacing-lg);
   cursor: pointer;
-  font-weight: 500;
+  font-family: var(--retro-font);
+  font-weight: normal;
   transition: all 0.3s ease;
   text-shadow: 0 0 5px var(--neon-primary);
   position: relative;
@@ -14,14 +15,21 @@
 
 .neon-button:hover {
   background-color: var(--neon-primary);
-  color: var(--darker-bg);
+  color: var(--dark-bg);
   box-shadow: 0 0 10px var(--neon-primary),
-              0 0 20px var(--neon-primary),
-              0 0 30px var(--neon-primary);
+              0 0 20px var(--neon-primary);
+  animation: buttonGlow 1s infinite;
 }
 
 .neon-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   box-shadow: none;
+  animation: none;
+}
+
+@keyframes buttonGlow {
+  0% { box-shadow: 0 0 5px var(--neon-primary); }
+  50% { box-shadow: 0 0 20px var(--neon-primary); }
+  100% { box-shadow: 0 0 5px var(--neon-primary); }
 }

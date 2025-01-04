@@ -7,7 +7,8 @@ class AIHandler {
     this.genAI = new GoogleGenerativeAI(API_KEY);
     this.runtimeMemory = [];
     this.persistentMemory = [];
-    this.loadPersistentMemory();  // Load persistent memory from file
+    // Load persistent memory from file
+    this.loadPersistentMemory();  
   }
 
   // Load persistent memory from a JSON file

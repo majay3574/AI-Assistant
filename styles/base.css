@@ -1,25 +1,29 @@
 :root {
-  --neon-primary: #00ff9d;
-  --neon-secondary: #00b8ff;
-  --neon-accent: #ff00ff;
-  --dark-bg: #0a0a0a;
-  --darker-bg: #050505;
+  --neon-primary: #ff00ff;    /* Bright magenta */
+  --neon-secondary: #00ffff;  /* Cyan */
+  --neon-accent: #ffff00;     /* Yellow */
+  --dark-bg: #000000;         /* Pure black */
+  --darker-bg: #0a0a0a;
   --text-color: #ffffff;
-  --border-radius: 8px;
+  --border-radius: 4px;       /* More squared corners for retro feel */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
-  --neon-shadow: 0 0 10px rgba(0, 255, 157, 0.5),
-                 0 0 20px rgba(0, 255, 157, 0.3),
-                 0 0 30px rgba(0, 255, 157, 0.1);
+  --neon-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
+                 0 0 20px rgba(255, 0, 255, 0.5),
+                 0 0 30px rgba(255, 0, 255, 0.3);
+  --retro-font: 'Press Start 2P', 'Courier New', monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-family: var(--retro-font);
   background-color: var(--dark-bg);
   color: var(--text-color);
+  line-height: 1.6;
 }
 
 .container {
@@ -30,5 +34,12 @@ body {
   background: var(--darker-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--neon-shadow);
-  border: 1px solid var(--neon-primary);
+  border: 2px solid var(--neon-primary);
+  animation: borderPulse 2s infinite;
+}
+
+@keyframes borderPulse {
+  0% { border-color: var(--neon-primary); }
+  50% { border-color: var(--neon-secondary); }
+  100% { border-color: var(--neon-primary); }
 }

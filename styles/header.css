@@ -1,6 +1,6 @@
 .header {
   padding: var(--spacing-md);
-  border-bottom: 1px solid var(--neon-primary);
+  border-bottom: 2px solid var(--neon-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,12 +10,24 @@
 
 .header h1 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--neon-primary);
   text-shadow: 0 0 10px var(--neon-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: textFlicker 3s infinite;
+}
+
+@keyframes textFlicker {
+  0% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.4; }
+  94% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 #clearMemory {
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   padding: var(--spacing-sm) var(--spacing-md);
+  text-transform: uppercase;
 }

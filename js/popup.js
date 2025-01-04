@@ -22,7 +22,7 @@ function initializeUI() {
 function createMessageElement(message, isUser) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
-  
+
   const textElement = document.createElement('pre');
   textElement.className = 'message-text';
   textElement.textContent = message;
@@ -33,10 +33,22 @@ function createMessageElement(message, isUser) {
 
 function displayMessage(message, isUser) {
   if (!chatContainer) return;
-  
+
   const messageElement = createMessageElement(message, isUser);
+
+  // Check if the message is script-level (e.g., contains specific keywords or tags)
+  if (isScriptLevelMessage(message)) {
+    messageElement.classList.add('script-message');
+  }
+
   chatContainer.appendChild(messageElement);
   chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+// Utility to check if the message contains script-level content
+function isScriptLevelMessage(message) {
+  // Example check: looking for code blocks or script tags (you can adjust based on your needs)
+  return message.includes('<script>') || message.includes('</script>') || message.trim().startsWith('```');
 }
 
 async function loadChatHistory() {
@@ -50,7 +62,6 @@ async function loadChatHistory() {
     });
   } catch (error) {
     console.error('Error loading chat history:', error);
-    //displayMessage('Error loading chat history. Please try again.', false);
   }
 }
 
